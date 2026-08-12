@@ -6,10 +6,10 @@ exports.update = async(req , res)=>{
             return res.status(400).json({message : "No Photo Provided "});
         }
         const imagePath = req.file.path.replace(/\\/g, "/");
-
+        const fullImageUrl = `${req.protocol}://${req.get("host")}/${imagePath}`;
         const updatedUser = await User.findByIdAndUpdate(
             req.user.id,
-            {profileImage : imagePath},
+            {profileImage : fullImageUrl},
             {new : true}
         );
         if (!updatedUser) {

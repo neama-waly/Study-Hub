@@ -22,7 +22,7 @@ app.use("/api/signup",SignUp)
 app.use("/api/login",Login)
 app.use("/api/profile",profile)
 app.use("/api/materials",materialRoute)
-app.use("/uploads", express.static("uploads"));
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.get("/",(req,res)=>{
     res.send("Running successfully")
