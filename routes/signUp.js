@@ -4,6 +4,7 @@ const User = require("../models/User");
 const bycript = require("bcrypt");
 
 router.post("/",async(req ,res)=>{
+    console.log("RECEIVED BODY:", req.body);
     try{
         const {userName , password } =req.body;
         const existing = await User.findOne({userName});
