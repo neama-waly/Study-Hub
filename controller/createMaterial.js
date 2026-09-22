@@ -9,7 +9,7 @@ exports.createMaterial = async(req , res)=>{
         if(!req.file){
             return res.status(400).json({message : "Please upload a file"})
         }
-        const fileUrl = `https://study-hub-production-4e64.up.railway.app/uploads/${req.file.filename}`;
+        const fileUrl = `https://study-hub-brown-mu.vercel.app/uploads/${req.file.filename}`;
         const newMaterial = new material({
             title,
             subject,
